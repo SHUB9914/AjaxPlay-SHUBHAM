@@ -1,0 +1,39 @@
+<html>
+<script>
+
+$(document).ready(function(){
+$('#click').on("click",function(){
+
+
+myJsRoutes.controllers.SignUpHandleAjaxController.index($('#id').val(),$('#name').val(),$('#pass').val()).ajax({
+success: function(data){
+$('#response').html(data);
+
+},
+error: function(){
+$('#response').html("sry");
+alert("fail")
+}
+
+})
+})
+});
+
+
+</script>
+    </head>
+
+
+
+    <body>
+    <div id ="response">
+UserName:<br><input type="text" id ="id"><br><br>
+Name<br><input type="text" id ="name"><br><br>
+Password<br><input type="password" id ="pass"><br><br>
+    <input type  ="button" id ="click" value="SignUp" >
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<html>
+<script>
+
+$(document).ready(function(){
+$('#click1').on("click",function(){
+
+
+myJsRoutes.controllers.LoginHandleAjaxController.index($('#id').val(),$('#pass').val()).ajax({
+success: function(data){
+$('#inner').html(data);
+
+},
+error: function(){
+$('#login').html("sry");
+alert("fail")
+}
+
+})
+})
+});
+
+
+</script>
+
+
+
+
+<body>
+<div id ="inner">
+    UserName<input type="text" id ="id"><br><br>
+    Password<input type="password" id ="pass"><br><br>
+    <input type  ="button" id ="click1" value="Login" >
+
+</div>
+
+</body>
+
+</html>
